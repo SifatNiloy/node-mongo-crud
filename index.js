@@ -20,15 +20,15 @@ async function run() {
     try {
         await client.connect();
         const userCollection = client.db("foodExpress").collection("user");
-        const user = { name: 'jhankar', email: 'jhankar@gmail.com' }
-        const result = await userCollection.insertOne(user);
-        console.log(`result inserted with id: ${result.insertedId}`);
+        app.post('/user', (req, res) => {
+
+        })
     }
     finally {
         // await client.close();
     }
 }
-run.catch(console.dir)
+run().catch(console.dir)
 app.get('/', (req, res) => {
     res.send('Running my node crud server')
 });
